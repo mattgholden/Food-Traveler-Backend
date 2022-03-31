@@ -1,0 +1,30 @@
+require ('dotenv').config()
+const express = require('express')
+const app = express()
+const PORT = 8000
+const SESSION_SECRET = process.env.SESSION_SECRET
+const cors = require('cors')
+const session = require('express-session')
+// const bodyParser = require('body-parser')
+const toEatListController = require('./controllers/toEatList')
+const sessionController = require('./controllers/session')
+// app.set('port', process.env.PORT || 8000)
+
+app.use(cors())
+// app.use(bodyParser.json())
+
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
+app.use(session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.use('/toEatList', toEatListController)
+app.use('/session', sessionController)
+
+app.listen(PORT, () => {
+    console.log('Food Travels on port', PORT, '🍕 ✅')
+})

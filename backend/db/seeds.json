@@ -1,0 +1,23 @@
+[
+    {
+        "destination": "New York City" ,
+        "startDateOfTravel": "3/13/2022",
+        "endDateOfTravel": "3/14/2022",
+        "restaurantName": "Ribalta",
+        "amountOfDays": 1
+    },
+    {
+        "destination": "Napoli",
+        "startDateOfTravel": "8/5/2022",
+        "endDateOfTravel": "8/19/2022",
+        "restaurantName": "Sunrise",
+        "amountOfDays": 14
+    },
+    {
+        "destination": "New Haven",
+        "startDateOfTravel": "1/1/2023",
+        "endDateOfTravel": "1/6/2023",
+        "restaurantName": "Out",
+        "amountOfDays": 5
+    }
+]
