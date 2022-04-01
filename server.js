@@ -2,14 +2,13 @@ require ('dotenv').config()
 const express = require('express')
 const app = express()
 app.set('port', process.env.PORT || 8000)
-const PORT = 8000
 const SESSION_SECRET = process.env.SESSION_SECRET
 const cors = require('cors')
 const session = require('express-session')
 // const bodyParser = require('body-parser')
 const toEatListController = require('./controllers/toEatList')
 const sessionController = require('./controllers/session')
-// app.set('port', process.env.PORT || 8000)
+
 
 app.use(cors())
 // app.use(bodyParser.json())
