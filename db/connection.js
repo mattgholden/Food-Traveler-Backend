@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb://127.0.0.1:27017/lists";
 
-mongoose.connect(mongoURI, {
+const MONGODB_URI = process.env.NODE_ENV === 'production' ? process.env.DB_URL : 'mongodb://127.0.0.1:27017/lists'
+
+mongoose.connect(MONGODB_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })

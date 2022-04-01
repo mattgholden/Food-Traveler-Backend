@@ -1,6 +1,7 @@
 require ('dotenv').config()
 const express = require('express')
 const app = express()
+app.set('port', process.env.PORT || 8000)
 const PORT = 8000
 const SESSION_SECRET = process.env.SESSION_SECRET
 const cors = require('cors')
@@ -25,6 +26,6 @@ app.use(session({
 app.use('/toEatList', toEatListController)
 app.use('/session', sessionController)
 
-app.listen(PORT, () => {
-    console.log('Food Travels on port', PORT, '🍕 ✅')
+app.listen(app.get('port'), () => {
+    console.log(`Food Travels on port, ${app.get('port')}, 🍕 ✅`)
 })
