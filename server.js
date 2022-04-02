@@ -5,13 +5,14 @@ app.set('port', process.env.PORT || 8000)
 const SESSION_SECRET = process.env.SESSION_SECRET
 const cors = require('cors')
 const session = require('express-session')
-// const bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 const toEatListController = require('./controllers/toEatList')
 const sessionController = require('./controllers/session')
 
 
 app.use(cors())
-// app.use(bodyParser.json())
+//options to pass to cors
+app.use(bodyParser.json())
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
